@@ -1,0 +1,29 @@
+// ------------ Begin: EmployeeActionForm.java ----------------------
+package salesdept;
+
+import javax.servlet.http.*;
+import org.apache.struts.action.*;
+
+public class EmployeeActionForm extends ActionForm
+{
+    private String firstName;
+    private String lastName;
+    private String fullName;
+    private String age;
+    private String salary;
+    private String errorMessages;
+
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public String getFullName() { return fullName; }
+    public void setFirstName( String firstName )
+    {
+        this.firstName = firstName;
+    }
+    public void setLastName( String lastName ) {this.lastName = lastName;}
+    public void setFullName()
+    {
+        fullName = firstName + " " + lastName;
+    }
+}
+// ------------ End: EmployeeActionForm.java ----------------------

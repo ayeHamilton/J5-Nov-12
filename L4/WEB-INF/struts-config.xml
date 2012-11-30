@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config
+        PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+            "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="EmployeeForm" type="hrdept.EmployeeActionForm" />
+    </form-beans>
+    <action-mappings>
+      <action path="/Assign4.1/inputemployee"
+                name="EmployeeForm"
+                scope="request"
+                forward="/Assign4.1/InputEmployee.jsp" />
+        <action path="/displayempl"
+                type="hrdept.DisplayEmployeeAction"
+                name="EmployeeForm"
+                scope="request">
+                <forward name="success"
+                        path="/Assign4.1/DisplayEmployee.jsp"/>
+        </action>
+    </action-mappings>
+</struts-config>
