@@ -9,14 +9,17 @@
     <action-mappings>
         <action path="/inputname"
                 name="NameForm"
+                validate ="false"
                 scope="request"
                 forward="/InputName.jsp" />
         <action path="/displayname"
                 type="salesdept.DisplayNameAction"
                 name="NameForm"
+                input="/InputName.jsp"
                 scope="request">
                 <forward name="success"
                         path="/DisplayName.jsp"/>
         </action>
     </action-mappings>
+    <message-resources parameter="ErrorMessages"/>
 </struts-config>

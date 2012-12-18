@@ -7,16 +7,19 @@
         <form-bean name="EmployeeForm" type="hrdept.EmployeeActionForm" />
     </form-beans>
     <action-mappings>
-      <action path="/Assign4.1/inputemployee"
+      <action path="/Assign5.1/inputemployee"
                 name="EmployeeForm"
                 scope="request"
-                forward="/Assign4.1/InputEmployee.jsp" />
+                validate="false"
+                forward="/Assign5.1/InputEmployee.jsp" />
         <action path="/displayempl"
                 type="hrdept.DisplayEmployeeAction"
                 name="EmployeeForm"
+                input="/Assign5.1/InputEmployee.jsp"
                 scope="request">
                 <forward name="success"
-                        path="/Assign4.1/DisplayEmployee.jsp"/>
+                  path="/Assign5.1/DisplayEmployee.jsp"/>
         </action>
     </action-mappings>
+    <message-resources parameter="ErrorMessages"/>
 </struts-config>

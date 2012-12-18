@@ -4,19 +4,19 @@
             "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
 <struts-config>
     <form-beans>
-        <form-bean name="NameForm" type="salesdept.NameActionForm" />
+        <form-bean name="EmployeeForm" type="hrdept.EmployeeActionForm" />
     </form-beans>
     <action-mappings>
-        <action path="/inputname"
-                name="NameForm"
+      <action path="/Assign4.1/putemployee"
+                name="EmployeeForm"
                 scope="request"
-                forward="/InputName.jsp" />
-        <action path="/displayname"
-                type="salesdept.DisplayNameAction"
-                name="NameForm"
+                forward="Assign4.1/InputEmployee.jsp" />
+        <action path="/displayempl"
+                type="salesdept.DisplayEmployeeAction"
+                name="EmployeeForm"
                 scope="request">
                 <forward name="success"
-                        path="/DisplayName.jsp"/>
+                        path="/DisplayEmployee.jsp"/>
         </action>
     </action-mappings>
 </struts-config>

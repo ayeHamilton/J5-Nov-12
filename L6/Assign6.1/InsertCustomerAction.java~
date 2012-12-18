@@ -1,0 +1,36 @@
+// ------------ Start: InsertCustomerAction.java-------------
+package salesdept;
+
+import java.io.*;
+import javax.servlet.*;
+import org.apache.struts.action.*;
+
+
+public class InsertCustomerAction extends Action{
+
+    public ActionForward execute(ActionMapping mapping, ActionForm actionForm, HttpServletRequest request, HttpServletResponse response){
+
+	CustomerInfoActionForm form = (CustomerInfoActionForm) actionForm;
+	String customerId = form.getCustomerId();
+	String firstName  = form.getFirstName();
+	String lastName  = form.getLastName();
+	String age  = form.getAge();
+	String orderValue  = form.getOrderValue();
+
+	
+	CustomerDBObject cust = new CustomerDBObject();
+
+	cust.setCustomerId(Integer.parseInt(customerId));
+	cust.setFirstName (firstName);
+	cust.setLastName (lastName);
+	cust.setAge (Integer.parseInte(age));
+	cust.setOrderValue (Double.parseDouble(orderValue));
+
+	CustomerDBProcess custDBProcess = new CustomerDBProcess();
+	custDBProcess.addCustomer(cust);
+	request.setAttribute("mode", "displayOnly");
+	return mapping.findForward("success");
+	
+    }
+}
+// ------------ End: InsertCustomerAction.java-------------

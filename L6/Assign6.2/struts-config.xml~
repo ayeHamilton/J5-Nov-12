@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config
+	PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+	    "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<struts-config>
+    <form-beans type="org.apache.struts.action.ActionFormBean">
+	<form-bean name="CustomerInfoForm" type="salesdept.CustomerInfoActionForm" />
+    </form-beans>
+    <action-mappings>
+	<action path="/Assign6.2/editablecustomerlist"
+		type= "salesdept.DisplayCustomerListAction"
+		validate="false"
+		input="/CurrentTime.jsp"
+		scope="request">
+		<forward name="success" path="/Assign6.2/EditableCustomerList.jsp"/>
+	</action>
+
+	<action path="/Assign6.2/editcustomer"
+		type= "salesdept.EditCustomerAction"
+                name="CustomerInfoForm"
+		validate="false"
+		input="/CurrentTime.jsp"
+		scope="request">
+		<forward name="success" path="/Assign6.2/EditCustomer.jsp"/>
+	</action>
+
+	<action path="/Assign6.2/updatecustomer"
+		name= "salesdept.UpdateCustomerAction"
+		validate="false"
+		input="/CurrentTime.jsp"
+		scope="request">
+		<forward name="success" path="/Assign6.2/EditableCustomerList.jsp"/>
+	</action>
+
+	<action path="/Assign6.1/inputcustomer"
+		name="CustomerInfoForm"
+		type="salesdept.InputCustomerAction"
+		input="/CurrentTime.jsp"
+		validate="false"
+		scope="request">
+		<forward name="success" path="/Assign6.1/CustomerInfo.jsp"/>
+	</action>
+
+	<action path="/Assign6.1/insertcustomer"
+		type="salesdept.InsertCustomerAction"
+		name="CustomerInfoForm"
+		input="/Assign6.1/CustomerInfo.jsp"
+		scope="request">
+		<forward name="success"
+		  path="/Assign6.1/CustomerInfo.jsp"/>
+	</action>
+
+	<action path="/exer/customerlist"
+		type="salesdept.DisplayCustomerListAction"
+		scope="request">
+		<forward name="success"
+		  path="/exer/CustomerList.jsp"/>
+	</action>
+
+    </action-mappings>
+    <message-resources parameter="ErrorMessages"/>
+</struts-config>
